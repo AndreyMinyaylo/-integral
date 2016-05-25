@@ -38,11 +38,13 @@ namespace integral
             double someValue = 0;
             double a = input(someValue);
             double b = inputEnd(someValue);
-            double n = inputSigment(someValue);
-            resultIntegral(a, b, n);
+            int n = Convert.ToInt32(inputSigment(someValue));
+            int sigment = factorial(n);
+            resultIntegral(a, b, sigment);
+            //factorial(n);
         }
 
-        public static void resultIntegral(double a, double b, double n)
+        public static void resultIntegral(double a, double b, int n)
         {
             double h = (b - a) / n;
             double s = 0;
@@ -59,22 +61,23 @@ namespace integral
             Console.ReadKey();
         }
 
-        public static double factorial(double n)
+        public static int factorial(int n)
         {
-            if (n == 1)
-            {
-                return 1;
-            }
-            else
+            if (n != 1)
             {
                 return n * factorial(n - 1);
             }
-
+            else
+            {
+                return 1;
+            }
+           
         }
 
         static void Main(string[] args)
             {
                 traceValue();
+            //factorial();
             }
         }
     }
